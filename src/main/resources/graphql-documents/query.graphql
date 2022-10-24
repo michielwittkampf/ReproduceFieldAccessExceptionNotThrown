@@ -1,0 +1,8 @@
+query {
+    root {
+        info
+        branch {
+            info
+        }
+    }
+}

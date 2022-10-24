@@ -1,0 +1,10 @@
+{
+  "data": {
+    "root": {
+      "info": "This is the Root",
+      "branch": {
+        "info": "This is a branch"
+      }
+    }
+  }
+}

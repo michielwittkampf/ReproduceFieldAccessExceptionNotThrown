@@ -1,0 +1,14 @@
+{
+  "errors": [
+    {
+      "message": "message",
+      "locations": [],
+      "path": [
+        "root"
+      ]
+    }
+  ],
+  "data": {
+    "root": null
+  }
+}

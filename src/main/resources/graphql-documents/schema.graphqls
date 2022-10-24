@@ -1,0 +1,12 @@
+type Query {
+  root: Root
+}
+
+type Root {
+  info: String
+  branch: Branch
+}
+
+type Branch {
+  info: String
+}
