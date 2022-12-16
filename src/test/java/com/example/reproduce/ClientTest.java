@@ -26,7 +26,7 @@ class ClientTest {
     Client sut;
 
     /**
-     * I expect this test to succeed. But it doesn't. No FieldAccessException is thrown.
+     * I expect this test to succeed. FieldAccessException is thrown.
      */
     @Test
     void whenRetrievingRootAndBranchPathContainsErrorThenFieldAccessException() {
@@ -39,8 +39,20 @@ class ClientTest {
     }
 
     /**
-     * Informational test. Log what is returned in the above test.
-     * I expect this test to fail, with a FieldAccessException. But it succeeds.
+     * If the Branch has a value, the path with an error should still lead to a FieldAccessException.
+     */
+    @Test
+    void whenRetrievingRootAndBranchHasValueAndBranchPathContainsErrorThenFieldAccessException() {
+        WireMock.stubFor(WireMock.any(WireMock.anyUrl())
+                .willReturn(WireMock.ok()
+                        .withBody(resourceToString("/responseWithBranchHasValueAndError.json"))
+                        .withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)));
+
+        assertThatExceptionOfType(FieldAccessException.class).isThrownBy(sut::getRoot);
+    }
+
+    /**
+     * I expect this test to fail, with a FieldAccessException.
      */
     @Test
     void logRootWhenRetrievingRootAndBranchPathContainsError() {

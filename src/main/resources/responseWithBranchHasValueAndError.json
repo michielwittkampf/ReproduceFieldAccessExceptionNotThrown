@@ -1,0 +1,20 @@
+{
+  "errors": [
+    {
+      "message": "message",
+      "locations": [],
+      "path": [
+        "root",
+        "branch"
+      ]
+    }
+  ],
+  "data": {
+    "root": {
+      "info": "This is the Root",
+      "branch": {
+        "info": "branch contains value"
+      }
+    }
+  }
+}
